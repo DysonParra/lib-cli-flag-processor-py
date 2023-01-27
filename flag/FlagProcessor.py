@@ -7,6 +7,19 @@ def print_flags_array(flags, printNone: bool):
             print(flag)
     print("END Flags\n")
 
+def printFlagsMatrix(flags, message):
+    print(message)
+    line = ""
+    for valueOr in flags:
+        line = valueOr[0]
+        for i in range(1, len(valueOr)):
+            line += " or " + valueOr[i]
+        print(line)
+
+    if (len(flags) == 0):
+        print("Not specified.")
+    print("")
+
 def compare_required_and_optional_flags(requiredFlags: list, optionalFlags: list):
     for reqValuesOr in  requiredFlags:
         for reqFlag in reqValuesOr:
@@ -68,7 +81,7 @@ def convertArgsToFlagsArray(args: list, inputFlags: list):
                     return msg_Expect_Value_1 + "'" + args[i - 1] + "'" + msg_Expect_Value_2 + "'" + arg + "'"
                 elif oldState == "value" or oldState == "flagNoValue":
                     flag = arg
-                    inputFlags[flagNumber] = Flag(flag, None, True)
+                    inputFlags[flagNumber] = Flag(flag, None, False)
                     flagNumber+=1
 
     if state == "flag":
@@ -183,3 +196,25 @@ def validate_flags(args: list, requiredFlags: list, optionalFlags: list, allowUn
         print(result)
         return None
     return outputFlags
+
+def convert_args_to_flags(args: list, defaultArgs: list, requiredFlags: list, optionalFlags: list, allowUnknownFlags: bool):
+    flags: list
+    requiredFlags = requiredFlags if not requiredFlags == None else {}
+    optionalFlags = optionalFlags if not optionalFlags == None else {}
+    if ((defaultArgs == None or len(defaultArgs) == 0)
+            and (args == None or len(args) == 0)):
+        print("Flags and default flags not specified...")
+        flags = None
+    elif (args != None and len(args) != 0):
+        print("Validating specified flags...")
+        flags = validate_flags(args, requiredFlags, optionalFlags, allowUnknownFlags)
+    else:
+        print("No flags specified, validating default flags...")
+        flags = validate_flags(defaultArgs, requiredFlags, optionalFlags, allowUnknownFlags)
+
+    if (flags == None):
+        print("")
+        printFlagsMatrix(requiredFlags, "Required flags:")
+        printFlagsMatrix(optionalFlags, "Optional flags:")
+
+    return flags

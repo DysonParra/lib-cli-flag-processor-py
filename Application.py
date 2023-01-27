@@ -13,7 +13,7 @@ optionalFlags = [
     ["-flag", "--noFlag"],
     ["-test", "--noTest"]]
 
-argsAux = [
+defaultArgs = [
     "--useDefault",
     "-uses",
     "MKV",
@@ -31,8 +31,8 @@ argsAux = [
 #for i in range(1, len(sys.argv)):
 #    print (sys.argv[i])
 
-#flags = validate_flags(argsAux, requiredFlags, optionalFlags, True)
-flags = validate_flags(sys.argv[1:], requiredFlags, optionalFlags, True)
+flags: list
+flags = convert_args_to_flags(sys.argv[1:], defaultArgs, requiredFlags, optionalFlags, True)
 if (flags == None):
     print("...ERROR IN FLAGS...")
     sys.exit(0)
