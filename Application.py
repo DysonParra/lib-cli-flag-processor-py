@@ -1,41 +1,9 @@
 import sys
-from flag.Flag import Flag
-from flag.FlagProcessor import *
+from datetime import datetime
+from tester.AppTester import *
 
-print("\n...START...")
+DATE_FORMAT ="%Y-%m-%d %H:%M:%S"
 
-requiredFlags = [
-	["-use", "--notUse", "--find"],
-	["-name", "--noName"],
-	["-encoder", "--noEncoder"]]
-
-optionalFlags = [
-	["-flag", "--noFlag"],
-	["-test", "--noTest"]]
-
-defaultArgs = [
-	"--useDefault",
-	"-uses",
-	"MKV",
-	"-noTest",
-	"aac",
-	"-use",
-	"ffmpeg",
-	"-name",
-	"chromedriver.exe",
-	"-test",
-	"_urls.xml",
-	"--aac",
-	"--noEncoder"]
-
-#for i in range(1, len(sys.argv)):
-#	print (sys.argv[i])
-
-flags: list
-flags = convert_args_to_flags(sys.argv[1:], defaultArgs, requiredFlags, optionalFlags, True)
-if (flags == None):
-	print("...ERROR IN FLAGS...")
-	sys.exit(0)
-
-print_flags_array(flags, True)
-print("...END...")
+print(f"\nStart date: {datetime.now().strftime(DATE_FORMAT)}\n")
+print(f"\nResult: {startTesting(sys.argv[1:])}")
+print(f"\nEnd date:   {datetime.now().strftime(DATE_FORMAT)}")

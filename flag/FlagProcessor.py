@@ -1,19 +1,20 @@
 from flag.Flag import Flag
 
 def print_flags_array(flags, printNone: bool):
-	print("\nSTART Flags:")
-	for flag in flags:
-		if printNone or flag != None:
-			print(flag)
-	print("END Flags\n")
+	print("\nFlags START")
+	if flags is not None:
+		for flag in flags:
+			if printNone or flag != None:
+				print(flag)
+	print("Flags END\n")
 
 def printFlagsMatrix(flags, message):
 	print(message)
 	line = ""
-	for valueOr in flags:
-		line = valueOr[0]
-		for i in range(1, len(valueOr)):
-			line += " or " + valueOr[i]
+	for flag in flags:
+		line = flag[0]
+		for i in range(1, len(flag)):
+			line += " or " + flag[i]
 		print(line)
 
 	if (len(flags) == 0):
@@ -216,5 +217,7 @@ def convert_args_to_flags(args: list, defaultArgs: list, requiredFlags: list, op
 		print("")
 		printFlagsMatrix(requiredFlags, "Required flags:")
 		printFlagsMatrix(optionalFlags, "Optional flags:")
-
+		System.out.println("Error in flags")
+	else:
+		print_flags_array(flags, True)
 	return flags
