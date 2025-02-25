@@ -27,7 +27,7 @@ class AppTester:
 	def start_testing(args: list):
 	    """
 	    Ejecuta las pruebas de la aplicación.
-	    
+	
 	    @param args argumentos de la linea de comandos.
 	    @return {@code true} si se ejecutan las pruebas correctamente, {@code false} caso contrario.
 	    """
@@ -58,5 +58,5 @@ class AppTester:
 	    flags = convert_args_to_flags(args, defaultArgs, requiredFlags, optionalFlags, True)
 	    if (flags != None):
 	        print("Flags success processed")
-	    
+	
 	    return flags != None
