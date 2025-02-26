@@ -15,9 +15,9 @@ History
 class Flag:
 	"""
 	TODO: Description of {@code Flag}.
-	
+
 	@author Dyson Parra
-	@since 3.11
+	@since Python 3.11
 	"""
 
 
@@ -39,7 +39,7 @@ class Flag:
 	def __str__(self):
 		"""
 		Obtiene el valor en {String} del objeto actual.
-		
+
 		Return:
 		- {String} con la representación del objeto.
 		"""

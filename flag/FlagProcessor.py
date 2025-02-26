@@ -18,7 +18,7 @@ from flag.Flag import Flag
 def print_flags_array(flags, printNone: bool):
 	"""
 	Muestra en consola el array indicado por {@code flags}
-	
+
 	@param flags     array de {@code Flag} que se va a imprimir en la consola.
 	@param printNull indica si se van a imprimir las flags con valor de {@code null}
 	"""
@@ -33,7 +33,7 @@ def print_flags_array(flags, printNone: bool):
 def print_flags_matrix(flags, message):
 	"""
 	Muestra en consola la matriz indicada por {@code flags}
-	
+
 	@param flags   array de {@code String} que se va a imprimir en la consola.
 	@param message mensaje que se mostrará antes de imprimir las flags.
 	"""
@@ -54,7 +54,7 @@ def compare_required_and_optional_flags(requiredFlags: list, optionalFlags: list
 	"""
 	Compara si hay {@code String} que están tanto en la matriz {@code requiredFlags} como en la
 	matriz {@code optionalFlags}.
-	
+
 	@param requiredFlags una matriz con las flags requeridas; en cada fila se indican las flags y
 	                     en cada columna indica cuales flags son excluyentes (si se incluye la
 	                     flag de una columna no se pueden incluir las flags en las otras columnas
@@ -81,7 +81,7 @@ def convert_args_to_flags_array(args: list, inputFlags: list):
 	"""
 	Analiza si el array {@code args} representa una secuencia válida de flags y en caso
 	afirmativo almacena en {@code inputFlags} el equivalente en {@code Flag} del array.
-	
+
 	@param args       un array de {@code String} que se va a procesar para verificar si es una
 	                  secuencia de flags válida.
 	@param inputFlags el array de {@code Flag} donde se va a almacenar el equivalente en
@@ -157,7 +157,7 @@ def compare_input_flags(inputFlags: list, outputFlags: list, acceptedFlags: list
 	flags son requeridas entonces {@code args} deben incluir todas las flags indicadas por
 	{@code acceptedFlags}, caso contrario si {@code required} es {@code false} {@code args} puede
 	incluir cero o más flags indicadas por {@code acceptedFlags}.
-	
+
 	@param inputFlags    es el array de {@code Flag} que se va a procesar.
 	@param outputFlags   es un array donde se almacenarán las flags indicada por
 	                     {@code acceptedFlags} que estén en {@code inputFlags}
@@ -228,7 +228,7 @@ def validate_specifed_flags(inputFlags: list , outputFlags: list, requiredFlags:
 	Verifica el array {@code inputFlags} cuales de las flags indicadas por {@code requiredFlags}
 	y por {@code optionalFlags} contiene y si {@code allowUnknownFlags} es {@code true} acepta
 	que hayan flags que no estén ni en {@code requiredFlags} ni en {@code optionalFlags}.
-	
+
 	@param inputFlags        es el array de {@code Flag} que se va a procesar.
 	@param outputFlags       es un array donde se almacenarán las flags indicada por
 	                         {@code requiredFlags} y por {@code optionalFlags} que estén en
@@ -282,7 +282,7 @@ def validate_flags(args: list, requiredFlags: list, optionalFlags: list, allowUn
 	flags requeridas {@code requiredFlags} estén todas especificadas allí, revisa que se incluyan
 	cero o más flags opcionales {@code optionalFlags} y si {@code allowUnknownFlags} es
 	{@code true} se aceptan flags que no sean opcionales ni requeridas caso afirmativo.
-	
+
 	@param args              un array de {@code String} que se va a procesar para verificar si es
 	                         una secuencia de flags válida.
 	@param requiredFlags     una matriz con las flags requeridas; en cada fila se indican las
@@ -339,7 +339,7 @@ def convert_args_to_flags(args: list, defaultArgs: list, requiredFlags: list, op
 	flags requeridas {@code requiredFlags} estén todas especificadas allí, revisa que se incluyan
 	cero o más flags opcionales {@code optionalFlags} y si {@code allowUnknownFlags} es
 	{@code true} se aceptan flags que no sean opcionales ni requeridas caso afirmativo.
-	
+
 	@param args              un array de {@code String} que se va a procesar para verificar si es
 	                         una secuencia de flags válida.
 	@param defaultArgs       un array de {@code String} que se va a procesar para verificar si es
