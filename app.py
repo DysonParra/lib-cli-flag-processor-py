@@ -1,5 +1,5 @@
 """
-@fileoverview    {Application}
+@fileoverview    {FileName}
 
 @version         2.0
 
@@ -25,6 +25,7 @@ def main():
 	print(f"\nStart date: {datetime.now().strftime(DATE_FORMAT)}\n")
 	print(f"\nResult: {AppTester.start_testing(sys.argv[1:])}")
 	print(f"\nEnd date:   {datetime.now().strftime(DATE_FORMAT)}")
+
 
 if __name__ == "__main__":
 	main()

@@ -1,2 +1,2 @@
-python Application.py --find --noName --noEncoder
+python app.py --find --noName --noEncoder
 ::@PAUSE
