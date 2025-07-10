@@ -1,5 +1,5 @@
 """
-@fileoverview    {FlagProcessor}
+@overview        {FlagProcessor}
 
 @version         2.0
 

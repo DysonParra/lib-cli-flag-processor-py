@@ -1,5 +1,5 @@
 """
-@fileoverview    {Flag}
+@overview        {Flag}
 
 @version         2.0
 

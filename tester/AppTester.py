@@ -1,5 +1,5 @@
 """
-@fileoverview    {AppTester}
+@overview        {AppTester}
 
 @version         2.0
 
