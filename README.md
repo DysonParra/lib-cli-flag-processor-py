@@ -6,12 +6,12 @@ To get information of how this user is naming the repositories go [here](https:/
 The flags are from two types (you can use the two at same time):  
   * With value: an alphanumeric string started with '-' and the next argument must be the value of the flag.  
   Example:  -downloadPath documents   -sourceFile myFile.xml   -rootDir C:/project  
-  * Withouth value: an alphanumerirc string started with '--'.  
+  * without value: an alphanumerirc string started with '--'.  
   Example:  --useDefault  --notUseIncognito  --generateLogFile  --preserveTempFiles  
 
     For use the library you need to specify in source code a sets of flags:
     * Required: The flags that if are not included in the arguments the lib return an error.  
-    * Optional: The flags that can or not be included in the arguments withouth problem.  
+    * Optional: The flags that can or not be included in the arguments without problem.  
     * Default: The flags that are used if the cli arguments not specify any flag.  
 
 The required and the optional flags are a matrix (can be different size), that in each row defined a set of flags that are just like a XOR, only one of these flags must be included, and the default flags are a vector, example:
